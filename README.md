@@ -75,8 +75,8 @@ ham puan = Σ(izin puanı × kapsam çarpanı) + Σ(kombinasyon cezaları)
 
 Kombinasyon cezaları puanın çoğunu oluşturuyor. "Veri sızdırma" kuralı
 örneğin, sadece dış istek atmayı değil, önce çerez/depolama okuyup sonra
-göndermeyi arıyor — filtre listesi güncelleyen bir reklam engelleyici
-artık boşuna cezalandırılmıyor.
+göndermeyi birlikte arıyor — bu sayede filtre listesi güncelleyen bir
+reklam engelleyici gibi sıradan dış istekler yanlış yere cezalandırılmıyor.
 
 Ham puan 0-190 arasına sıkışıp A-E notuna dönüşüyor. Arayüzde sadece harf
 gösteriliyor. E notu en yüksek maruziyet demek, kendi içinde ayrıca bir
@@ -121,13 +121,10 @@ düşük kalıyor.
 
 ## Büyük paket desteği ve kararlılık
 
-Erken sürümlerde büyük paketler (70 MB üzeri) barındırma ortamının bellek
-sınırını (512 MB) aşıp sunucuyu çökertiyordu. Kök sebep, paketin tamamının
-tek bir bellek bloğu (buffer) olarak tutulmasıydı.
+Barındırma ortamının bellek sınırı (512 MB) göz önüne alınarak, büyük
+paketlerin işlenmesi belleği zorlamayacak bir mimariyle kuruldu:
 
-Bunu çözmek için mimari değişti:
-
-- Mağaza indirmesi artık tamamı belleğe alınmadan, doğrudan geçici diske
+- Mağaza indirmesi tamamı belleğe alınmadan, doğrudan geçici diske
   akıtılıyor (`store.js`)
 - Analiz, ana sunucu sürecinden ayrı, izole bir işçi süreçte çalışıyor
   (`analyzeIsolated.js` / `analyzeWorker.js`) — bir sorun çıkarsa sadece
@@ -135,8 +132,8 @@ Bunu çözmek için mimari değişti:
 - Zip içeriği akış hâlinde okunuyor (`streamPaket.js`), dosyalar tek tek
   işlenip bellekten atılıyor
 
-Bu değişiklikten sonra 114 MB'lık gerçek bir eklenti (Keeper Password
-Manager) sorunsuz analiz edildi.
+Bu sayede 114 MB'lık gerçek bir eklenti (Keeper Password Manager) bile
+sorunsuz analiz edilebiliyor.
 
 ## PWA desteği
 
