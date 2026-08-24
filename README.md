@@ -3,9 +3,10 @@
 Tarayıcı eklentilerinin izinlerine bakıp ne yapabildiklerini gösteren bir
 analiz aracı.
 
-Adını güvenlik jargonundaki *blast radius* kavramından alıyor: bir bileşen
-ele geçirilirse hasar nereye kadar yayılır. Kötü niyet aramıyor, yetenek
-ölçüyor.
+İsmini güvenlik alanındaki *blast radius* kavramından alıyor: bir bileşen
+ele geçirilirse etkisi ne kadar yayılır. Araç bir eklentiyi kötü ya da iyi
+diye etiketlemiyor; sahip olduğu yetenekleri ve oluşturabileceği
+potansiyel riski gösteriyor.
 
 Canlı: **https://blast-radius.sbs**
 
@@ -78,7 +79,8 @@ göndermeyi arıyor — filtre listesi güncelleyen bir reklam engelleyici
 artık boşuna cezalandırılmıyor.
 
 Ham puan 0-190 arasına sıkışıp A-E notuna dönüşüyor. Arayüzde sadece harf
-gösteriliyor. E, en yüksek maruziyet demek, kendi içinde sıralama yapmıyor.
+gösteriliyor. E notu en yüksek maruziyet demek, kendi içinde ayrıca bir
+sıralama yapmıyor.
 
 ## Kalibrasyon
 
@@ -108,12 +110,14 @@ node test/gercek-kalibrasyon.js
 ## Kod analizi
 
 `src/code.js` acorn ile kodu ayrıştırıp gerçek fonksiyon çağrılarını
-buluyor — yorumdaki ya da string içindeki `eval` yanlış pozitif vermiyor.
+buluyor. Bu sayede yorum satırındaki ya da bir metin (string) içindeki
+`eval` kelimesi yanlışlıkla sinyal olarak sayılmıyor.
 
 800 KB üzerindeki dosyalarda (genelde küçültülmüş/paketlenmiş kütüphane
-dosyaları) tam AST ayrıştırması bellek açısından riskli olduğundan, bu
-dosyalar yerine desen (regex) tabanlı bir hafif tarama devreye giriyor.
-Tespit kabiliyeti büyük ölçüde korunuyor, bellek tepe noktası düşüyor.
+dosyaları) tam AST ayrıştırması bellek açısından risk taşıdığı için, bu
+dosyalarda desen (regex) tabanlı daha hafif bir tarama kullanılıyor. Bu
+şekilde tespit kabiliyeti büyük ölçüde korunurken bellek kullanımı da
+düşük kalıyor.
 
 ## Büyük paket desteği ve kararlılık
 
@@ -121,7 +125,7 @@ Erken sürümlerde büyük paketler (70 MB üzeri) barındırma ortamının bell
 sınırını (512 MB) aşıp sunucuyu çökertiyordu. Kök sebep, paketin tamamının
 tek bir bellek bloğu (buffer) olarak tutulmasıydı.
 
-Çözüm için mimari değişti:
+Bunu çözmek için mimari değişti:
 
 - Mağaza indirmesi artık tamamı belleğe alınmadan, doğrudan geçici diske
   akıtılıyor (`store.js`)
@@ -138,9 +142,9 @@ Manager) sorunsuz analiz edildi.
 
 Site, tarayıcıdan ziyaret edildiğinde birkaç saniye sonra kapatılabilir
 bir "yükle" bildirimi gösteriyor. Windows'ta (Chrome/Edge) tek tıkla
-kurulum yapılabiliyor; Mac'te (Safari bu otomasyonu desteklemediği için)
-Paylaş menüsünden Dock'a ekleme talimatı gösteriliyor. Mobil cihazlarda
-bildirim hiç görünmüyor.
+kurulum yapılabiliyor. Mac'te Safari bu otomasyonu desteklemediği için,
+bunun yerine Paylaş menüsünden Dock'a ekleme talimatı gösteriliyor.
+Mobil cihazlarda bildirim hiç görünmüyor.
 
 ## Sınırlar
 
