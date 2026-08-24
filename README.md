@@ -12,17 +12,16 @@ Canlı: **https://blast-radius.sbs**
 
 ## Ne yapar
 
-- Eklenti paketini mağaza adresinden (Chrome Web Store, Firefox Add-ons,
-  Edge Add-ons) indirir ya da `.crx` / `.zip` dosyası olarak alır
-- İzinleri ve site erişim kapsamını çıkarır
-- JS dosyalarını ayrıştırıp şüpheli davranışları arar — metin taraması
-  değil, sözdizimi ağacı (AST) üzerinden
-- İzin kombinasyonlarının tek başına değil, birlikte ne anlama geldiğini
-  özetler
+Bir eklenti paketini mağaza adresinden (Chrome Web Store, Firefox
+Add-ons, Edge Add-ons) indirir ya da doğrudan `.crx` / `.zip` dosyası
+olarak kabul eder. Paketten izinleri ve site erişim kapsamını çıkarır;
+JS dosyalarını sözdizimi ağacı (AST) üzerinden ayrıştırıp şüpheli
+davranışları arar — düz metin taraması yapmaz.
 
-Örnek: `cookies` izni tek başına sıradan görünür. Geniş site erişimiyle
-birleşince oturum çalma imkanı doğar. Araç bunu ayrı ayrı değil, birlikte
-değerlendiriyor.
+İzinleri tek tek değil, birlikte değerlendirir. `cookies` izni tek
+başına sıradan görünür; geniş site erişimiyle birleşince oturum çalma
+imkanı doğar. Araç bu tür kombinasyonları ayrı ayrı değil, birlikte
+puanlıyor.
 
 ## Kurulum
 
