@@ -1,0 +1,353 @@
+{
+  "izinler": {
+    "debugger": {
+      "temel": 10,
+      "seviye": "kritik",
+      "kapsamDuyarli": false,
+      "yetenek": "Tarayıcının hata ayıklama protokolüne bağlanır.",
+      "aciklama": "Bu izin tek başına neredeyse sınırsız yetki verir: sayfadaki her şeyi okuyabilir, değiştirebilir, ağ trafiğini görebilir. Meşru kullanımı çok nadirdir."
+    },
+    "nativeMessaging": {
+      "temel": 9,
+      "seviye": "kritik",
+      "kapsamDuyarli": false,
+      "yetenek": "Bilgisayarda kurulu bir programla haberleşir.",
+      "aciklama": "Tarayıcının yalıtım sınırının dışına çıkar. Eklentinin işletim sistemi seviyesinde bir bileşenle konuştuğu anlamına gelir."
+    },
+    "proxy": {
+      "temel": 9,
+      "seviye": "kritik",
+      "kapsamDuyarli": false,
+      "yetenek": "Tüm ağ trafiğini başka bir sunucu üzerinden yönlendirir.",
+      "aciklama": "Trafiğin tamamı üçüncü bir tarafa yönlendirilebilir."
+    },
+    "cookies": {
+      "temel": 8,
+      "seviye": "yuksek",
+      "kapsamDuyarli": true,
+      "yetenek": "Çerezleri okur ve değiştirir.",
+      "aciklama": "Oturum çerezleri de buna dahildir. Geniş site erişimiyle birleştiğinde oturum ele geçirme yeteneği doğar."
+    },
+    "management": {
+      "temel": 8,
+      "seviye": "yuksek",
+      "kapsamDuyarli": false,
+      "yetenek": "Diğer eklentileri listeler, devre dışı bırakır veya kaldırır.",
+      "aciklama": "Güvenlik amaçlı kurulmuş eklentileri susturmak için kullanılabilir."
+    },
+    "desktopCapture": {
+      "temel": 8,
+      "seviye": "yuksek",
+      "kapsamDuyarli": false,
+      "yetenek": "Ekran görüntüsünü veya ekran videosunu yakalar.",
+      "aciklama": "Kullanıcı onayı gerektirir ama izin eklentinin tanım dosyasında ilan edilmiş olur."
+    },
+    "tabCapture": {
+      "temel": 7,
+      "seviye": "yuksek",
+      "kapsamDuyarli": false,
+      "yetenek": "Sekmenin görsel ve sesli içeriğini yakalar.",
+      "aciklama": "Ekran paylaşımı ve kayıt eklentilerinde meşrudur."
+    },
+    "scripting": {
+      "temel": 7,
+      "seviye": "yuksek",
+      "kapsamDuyarli": true,
+      "yetenek": "Sayfalara kod enjekte eder.",
+      "aciklama": "Riski tamamen hangi sitelerde çalıştığına bağlıdır. Tek alan adıyla sınırlıysa düşük, tüm sitelerde ise çok yüksek."
+    },
+    "webRequest": {
+      "temel": 6,
+      "seviye": "orta",
+      "kapsamDuyarli": true,
+      "yetenek": "Ağ isteklerini gözlemler.",
+      "aciklama": "Hangi adreslere istek attığın görülebilir; bu isteklerle birlikte giden oturum ve kimlik bilgilerin de bu kapsamda olabilir."
+    },
+    "declarativeNetRequest": {
+      "temel": 5,
+      "seviye": "orta",
+      "kapsamDuyarli": true,
+      "yetenek": "Ağ isteklerini kurallarla engeller veya yönlendirir.",
+      "aciklama": "Reklam engelleyicilerin meşru olarak kullandığı izindir; kural dosyaları ayrıca incelenmelidir."
+    },
+    "history": {
+      "temel": 6,
+      "seviye": "orta",
+      "kapsamDuyarli": false,
+      "yetenek": "Tarama geçmişini okur ve siler.",
+      "aciklama": "Geçmiş, kullanıcının ilgi alanlarını ve kurumsal iç panel adreslerini açığa çıkarır."
+    },
+    "identity": {
+      "temel": 6,
+      "seviye": "orta",
+      "kapsamDuyarli": false,
+      "yetenek": "Google gibi bir hesaba senin adına giriş yapıp erişim izni alabilir.",
+      "aciklama": "Bağlanan hesaptaki (e-posta, kişiler, dosyalar gibi) verilere eklenti üzerinden erişim anlamına gelebilir."
+    },
+    "clipboardRead": {
+      "temel": 6,
+      "seviye": "orta",
+      "kapsamDuyarli": false,
+      "yetenek": "Panoyu okur.",
+      "aciklama": "Parola yöneticilerinden kopyalanan parolalar panodan geçer."
+    },
+    "privacy": {
+      "temel": 5,
+      "seviye": "orta",
+      "kapsamDuyarli": false,
+      "yetenek": "Tarayıcının gizlilik ve güvenlik ayarlarını değiştirir.",
+      "aciklama": "Güvenli gezinme gibi korumalar kapatılabilir."
+    },
+    "tabs": {
+      "temel": 4,
+      "seviye": "orta",
+      "kapsamDuyarli": false,
+      "yetenek": "Açık sekmelerin adreslerini ve başlıklarını görür.",
+      "aciklama": "Sayfa içeriğine erişmez ama gezinme alışkanlığını tamamen görünür kılar."
+    },
+    "downloads": {
+      "temel": 4,
+      "seviye": "orta",
+      "kapsamDuyarli": false,
+      "yetenek": "Dosya indirir ve indirilenleri yönetir.",
+      "aciklama": "Kullanıcı etkileşimi olmadan dosya indirilebilir."
+    },
+    "geolocation": {
+      "temel": 4,
+      "seviye": "orta",
+      "kapsamDuyarli": false,
+      "yetenek": "Cihazın konumuna erişir.",
+      "aciklama": "Harita dışı eklentilerde gerekçesi sorgulanmalıdır."
+    },
+    "bookmarks": {
+      "temel": 3,
+      "seviye": "orta",
+      "kapsamDuyarli": false,
+      "yetenek": "Yer imlerini okur ve değiştirir.",
+      "aciklama": "Yer imleri kurumsal iç sistem adreslerini içerebilir."
+    },
+    "webNavigation": {
+      "temel": 3,
+      "seviye": "orta",
+      "kapsamDuyarli": false,
+      "yetenek": "Sayfa gezinme olaylarını izler.",
+      "aciklama": "Hangi adrese ne zaman gidildiği görülür."
+    },
+    "storage": {
+      "temel": 1,
+      "seviye": "dusuk",
+      "kapsamDuyarli": false,
+      "yetenek": "Kendi verisini saklar.",
+      "aciklama": "Neredeyse her eklentide bulunur, tek başına risk taşımaz."
+    },
+    "alarms": {
+      "temel": 0,
+      "seviye": "dusuk",
+      "kapsamDuyarli": false,
+      "yetenek": "Zamanlanmış görev çalıştırır.",
+      "aciklama": "Arka planda periyodik çalışma imkânı verir."
+    },
+    "notifications": {
+      "temel": 1,
+      "seviye": "dusuk",
+      "kapsamDuyarli": false,
+      "yetenek": "Masaüstü bildirimi gösterir.",
+      "aciklama": "Kötüye kullanımı reklam ve kandırmaca ile sınırlıdır."
+    },
+    "contextMenus": {
+      "temel": 0,
+      "seviye": "dusuk",
+      "kapsamDuyarli": false,
+      "yetenek": "Sağ tık menüsüne öğe ekler.",
+      "aciklama": "Risk taşımaz."
+    },
+    "unlimitedStorage": {
+      "temel": 1,
+      "seviye": "dusuk",
+      "kapsamDuyarli": false,
+      "yetenek": "Sınırsız yerel depolama kullanır.",
+      "aciklama": "Büyük hacimli veri biriktirilmesine imkân verir."
+    },
+    "idle": {
+      "temel": 0,
+      "seviye": "dusuk",
+      "kapsamDuyarli": false,
+      "yetenek": "Kullanıcının bilgisayar başında olup olmadığını öğrenir.",
+      "aciklama": "Risk taşımaz."
+    },
+    "activeTab": {
+      "temel": 0,
+      "seviye": "iyi_tasarim",
+      "kapsamDuyarli": false,
+      "yetenek": "Yalnızca kullanıcı eklentiye tıkladığında, yalnızca o sekmede çalışır.",
+      "aciklama": "Geniş site erişimi yerine bu iznin tercih edilmesi, en az yetki ilkesine uyulduğunu gösterir. Olumlu sinyal olarak değerlendirilir."
+    },
+    "offscreen": {
+      "temel": 4,
+      "seviye": "orta",
+      "kapsamDuyarli": false,
+      "yetenek": "Görünmez, arka planda çalışan bir sayfa oluşturur.",
+      "aciklama": "Ses çalma, pano işlemleri, DOM ayrıştırma gibi arka plan servisinin doğrudan yapamadığı işler için kullanılır. Meşru kullanımı yaygındır ama görünmez bir çalışma alanı açması takip zorlaştırır."
+    },
+    "userScripts": {
+      "temel": 8,
+      "seviye": "yuksek",
+      "kapsamDuyarli": true,
+      "yetenek": "Ziyaret edilen sayfalara kullanıcı adına özel kod enjekte eder.",
+      "aciklama": "Tampermonkey benzeri betik yöneticilerinin kullandığı yetkidir. Kullanıcının ayrıca tarayıcıdan 'Kullanıcı betiklerine izin ver' seçeneğini açması gerekir, ama açıldıktan sonra scripting izniyle aynı güçte sayfa erişimi sağlar."
+    },
+    "clipboardWrite": {
+      "temel": 1,
+      "seviye": "dusuk",
+      "kapsamDuyarli": false,
+      "yetenek": "Panoya veri yazar.",
+      "aciklama": "Kopyala/yapıştır özelliği sunan eklentilerde yaygındır, tek başına düşük risklidir."
+    },
+    "sidePanel": {
+      "temel": 1,
+      "seviye": "dusuk",
+      "kapsamDuyarli": false,
+      "yetenek": "Tarayıcının yan panelinde bir arayüz gösterir.",
+      "aciklama": "Görsel bir yerleşim iznidir, ek erişim sağlamaz."
+    },
+    "sessions": {
+      "temel": 3,
+      "seviye": "orta",
+      "kapsamDuyarli": false,
+      "yetenek": "Kapanmış sekme ve pencerelerin geçmişini okur.",
+      "aciklama": "Yakın zamanda kapatılan sekmelerin adreslerini görebilir."
+    },
+    "topSites": {
+      "temel": 3,
+      "seviye": "orta",
+      "kapsamDuyarli": false,
+      "yetenek": "En sık ziyaret edilen siteleri okur.",
+      "aciklama": "Tarama alışkanlığına dair özet bir profil çıkarabilir."
+    },
+    "browsingData": {
+      "temel": 4,
+      "seviye": "orta",
+      "kapsamDuyarli": false,
+      "yetenek": "Tarama geçmişini, çerezleri ve önbelleği siler.",
+      "aciklama": "Kullanıcının izlerini silebilir; temizlik araçlarında meşru, kötüye kullanımda delil gizlemede kullanılabilir."
+    },
+    "contentSettings": {
+      "temel": 4,
+      "seviye": "orta",
+      "kapsamDuyarli": false,
+      "yetenek": "Site bazlı tarayıcı ayarlarını (kamera, konum, bildirim izinleri gibi) değiştirir.",
+      "aciklama": "Gizlilik ve güvenlik ayarlarını kullanıcı bilgisi dışında değiştirebilir."
+    },
+    "fontSettings": {
+      "temel": 0,
+      "seviye": "dusuk",
+      "kapsamDuyarli": false,
+      "yetenek": "Tarayıcı yazı tipi ayarlarını okur ve değiştirir.",
+      "aciklama": "Risk taşımaz."
+    },
+    "gcm": {
+      "temel": 2,
+      "seviye": "dusuk",
+      "kapsamDuyarli": false,
+      "yetenek": "Google'ın anlık mesajlaşma servisi üzerinden bildirim alır.",
+      "aciklama": "Eklentinin uzak sunucudan tetiklenmesini sağlar."
+    },
+    "power": {
+      "temel": 1,
+      "seviye": "dusuk",
+      "kapsamDuyarli": false,
+      "yetenek": "Bilgisayarın uykuya geçmesini engeller.",
+      "aciklama": "Risk taşımaz."
+    },
+    "tts": {
+      "temel": 0,
+      "seviye": "dusuk",
+      "kapsamDuyarli": false,
+      "yetenek": "Metni sese çevirir.",
+      "aciklama": "Risk taşımaz."
+    },
+    "ttsEngine": {
+      "temel": 0,
+      "seviye": "dusuk",
+      "kapsamDuyarli": false,
+      "yetenek": "Sese çevirme motoru olarak kayıt olur.",
+      "aciklama": "Risk taşımaz."
+    },
+    "declarativeNetRequestWithHostAccess": {
+      "temel": 6,
+      "seviye": "orta",
+      "kapsamDuyarli": true,
+      "yetenek": "Ağ isteklerini kurallarla engeller ve isteğin içeriğini görebilir.",
+      "aciklama": "declarativeNetRequest'in genişletilmiş biçimidir; site erişimiyle birleşince istek gövdesini de görebilir."
+    },
+    "declarativeNetRequestFeedback": {
+      "temel": 1,
+      "seviye": "dusuk",
+      "kapsamDuyarli": false,
+      "yetenek": "Hangi ağ kurallarının eşleştiğine dair istatistik toplar.",
+      "aciklama": "Risk taşımaz, sadece tanılama amaçlıdır."
+    },
+    "accessibilityFeatures.read": {
+      "temel": 1,
+      "seviye": "dusuk",
+      "kapsamDuyarli": false,
+      "yetenek": "Erişilebilirlik ayarlarını okur.",
+      "aciklama": "Risk taşımaz."
+    },
+    "accessibilityFeatures.modify": {
+      "temel": 2,
+      "seviye": "orta",
+      "kapsamDuyarli": false,
+      "yetenek": "Erişilebilirlik ayarlarını değiştirir.",
+      "aciklama": "Ekran okuyucu gibi sistem ayarlarını kullanıcı bilgisi dışında değiştirebilir."
+    }
+  },
+  "manifestSinyalleri": {
+    "eskiSurum": {
+      "puan": 4,
+      "mesaj": "Eklenti eski kurallara göre paketlenmiş; bu eski sistemde eklentinin dışarıdan kod indirip çalıştırmasının önünde bir engel yok."
+    },
+    "gevsekCSP": {
+      "puan": 6,
+      "mesaj": "Eklentinin güvenlik kuralları gevşetilmiş; bu da dışarıdan indirilen ya da anlık üretilen kodun çalışmasına izin veriyor."
+    },
+    "genisExternallyConnectable": {
+      "puan": 5,
+      "mesaj": "Herhangi bir web sitesi eklentiyle doğrudan mesajlaşabiliyor."
+    },
+    "magazaDisiGuncelleme": {
+      "puan": 6,
+      "mesaj": "Güncellemeler resmî mağaza dışından alınıyor; bu güncellemelerin güvenli olduğu Chrome tarafından denetlenmiyor."
+    },
+    "erkenCalisanGenisIcerikScripti": {
+      "puan": 4,
+      "mesaj": "Eklentinin kodu, sayfa tamamen yüklenmeden önce ziyaret ettiğin her sitede çalışmaya başlıyor."
+    }
+  },
+  "hostErisimi": {
+    "genis": {
+      "puan": 18,
+      "etiket": "Tüm siteler",
+      "carpan": 2,
+      "aciklama": "Ziyaret edilen her sitede çalışabiliyor. Tek başına en büyük yetki genişlemesi budur."
+    },
+    "altAlanli": {
+      "puan": 8,
+      "etiket": "Bir alan adı ve alt alanları",
+      "carpan": 1.5,
+      "aciklama": "Belirli bir alan adının tüm alt alanlarında çalışabiliyor."
+    },
+    "tekAlan": {
+      "puan": 3,
+      "etiket": "Tek alan adı",
+      "carpan": 1,
+      "aciklama": "Erişim tek bir alan adıyla sınırlı."
+    },
+    "yok": {
+      "puan": 0,
+      "etiket": "Site erişimi yok",
+      "carpan": 0.5,
+      "aciklama": "Sayfalara kalıcı erişimi yok."
+    }
+  }
+}

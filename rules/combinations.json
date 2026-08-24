@@ -1,0 +1,159 @@
+{
+  "kurallar": [
+    {
+      "kimlik": "genis_sayfa_erisimi",
+      "ad": "Her sayfayı okuma ve değiştirme yeteneği",
+      "herhangiBiri": [
+        "scripting"
+      ],
+      "icerikScriptiSayilir": true,
+      "genisHostGerekli": true,
+      "puan": 10,
+      "seviye": "yuksek",
+      "aciklama": "Tüm sitelerde kod çalıştırabiliyor. Sayfa içeriğini okuyabilir ve değiştirebilir; bunun için ek bir izne ihtiyacı yok.",
+      "kullaniciCumlesi": "Girdiğiniz her sayfanın içeriğini okuyabilir ve değiştirebilir."
+    },
+    {
+      "kimlik": "oturum_calma",
+      "ad": "Oturum ele geçirme yeteneği",
+      "gerekli": [
+        "cookies"
+      ],
+      "genisHostGerekli": true,
+      "puan": 15,
+      "seviye": "kritik",
+      "aciklama": "Ziyaret edilen sitelerin oturum çerezlerini okuyabilir. Bu çerezler parola bilinmeden hesaba erişim sağlar.",
+      "kullaniciCumlesi": "Girdiğiniz sitelerdeki oturumunuzu kopyalayabilir."
+    },
+    {
+      "kimlik": "trafik_yonlendirme",
+      "ad": "Trafik yönlendirme yeteneği",
+      "gerekli": [
+        "proxy"
+      ],
+      "herhangiBiri": [
+        "webRequest",
+        "declarativeNetRequest"
+      ],
+      "puan": 14,
+      "seviye": "kritik",
+      "aciklama": "Ağ trafiğini hem görebiliyor hem yönlendirebiliyor. Aradaki adam konumuna geçebilir.",
+      "kullaniciCumlesi": "İnternet trafiğinizi kendi sunucusu üzerinden geçirebilir."
+    },
+    {
+      "kimlik": "savunma_kapatma",
+      "ad": "Diğer korumaları devre dışı bırakma yeteneği",
+      "gerekli": [
+        "management"
+      ],
+      "herhangiBiri": [
+        "scripting",
+        "webRequest",
+        "proxy",
+        "debugger",
+        "cookies"
+      ],
+      "puan": 10,
+      "seviye": "yuksek",
+      "aciklama": "Hem yüksek yetkili işlemler yapabiliyor hem de diğer eklentileri kaldırabiliyor.",
+      "kullaniciCumlesi": "Kurduğunuz güvenlik eklentilerini kapatabilir."
+    },
+    {
+      "kimlik": "pano_sizdirma",
+      "ad": "Pano içeriğini dışarıya gönderme yeteneği",
+      "gerekli": [
+        "clipboardRead"
+      ],
+      "kodSinyaliGerekli": [
+        "dis_istek"
+      ],
+      "puan": 10,
+      "seviye": "yuksek",
+      "aciklama": "Panoyu okuyabiliyor ve dışarıya istek atıyor. Kopyalanan parolalar ve kodlar bu yolla taşınabilir.",
+      "kullaniciCumlesi": "Kopyaladığınız metinleri dışarıya gönderebilir."
+    },
+    {
+      "kimlik": "uzaktan_kod",
+      "ad": "Uzaktan kod çalıştırma yeteneği",
+      "kodSinyaliGerekli": [
+        "uzaktan_kod"
+      ],
+      "puan": 12,
+      "seviye": "kritik",
+      "aciklama": "Kodunu çalışma anında dışarıdan çekiyor. Mağaza incelemesinden geçen kod ile kullanıcıda çalışan kod aynı olmayabilir.",
+      "kullaniciCumlesi": "Ne yapacağı sonradan değiştirilebilir."
+    },
+    {
+      "kimlik": "gezinme_profili",
+      "ad": "Gezinme profili çıkarma yeteneği",
+      "gerekli": [
+        "history"
+      ],
+      "herhangiBiri": [
+        "tabs",
+        "webNavigation"
+      ],
+      "kodSinyaliGerekli": [
+        "dis_istek"
+      ],
+      "puan": 8,
+      "seviye": "yuksek",
+      "aciklama": "Geçmişi ve açık sekmeleri okuyup dışarıya gönderebiliyor.",
+      "kullaniciCumlesi": "Hangi siteleri gezdiğinizi dışarıya bildirebilir."
+    },
+    {
+      "kimlik": "cerez_sizdirma",
+      "ad": "Çerez verisini dışarıya gönderme yeteneği",
+      "gerekli": [
+        "scripting"
+      ],
+      "genisHostGerekli": true,
+      "kodSinyaliGerekli": [
+        "dis_istek",
+        "cerez_erisimi"
+      ],
+      "puan": 14,
+      "seviye": "kritik",
+      "aciklama": "Tüm sitelerde çalışıyor, çerezleri okuyor ve harici bir sunucuya istek atıyor. Oturum bilgisi dışarı taşınabilir.",
+      "kullaniciCumlesi": "Oturum çerezlerinizi okuyup dışarıya gönderebilir."
+    },
+    {
+      "kimlik": "depolama_sizdirma",
+      "ad": "Sayfa verisini dışarıya gönderme yeteneği",
+      "gerekli": [
+        "scripting"
+      ],
+      "genisHostGerekli": true,
+      "kodSinyaliGerekli": [
+        "dis_istek",
+        "depolama_okuma"
+      ],
+      "puan": 11,
+      "seviye": "yuksek",
+      "aciklama": "Tüm sitelerde çalışıyor, sayfaların yerel depolamasını okuyor ve harici bir sunucuya istek atıyor.",
+      "kullaniciCumlesi": "Sitelerde sakladığınız verileri okuyup dışarıya gönderebilir."
+    }
+  ],
+  "iyiSinyaller": [
+    {
+      "kimlik": "en_az_yetki",
+      "kosul": "activeTab_var_genis_host_yok",
+      "mesaj": "Geniş site erişimi yerine yalnızca tıklandığında çalışan dar izin tercih edilmiş — gereğinden fazla yetki istenmemiş."
+    },
+    {
+      "kimlik": "dar_kapsam",
+      "kosul": "host_izinleri_tek_alan",
+      "mesaj": "Erişim tek bir alan adıyla sınırlandırılmış."
+    },
+    {
+      "kimlik": "guncel_manifest",
+      "kosul": "manifest_v3",
+      "mesaj": "Eklenti güncel Chrome kurallarına göre paketlenmiş; bu sayede dışarıdan kod indirip çalıştıramaz."
+    },
+    {
+      "kimlik": "dis_istek_yok",
+      "kosul": "dis_istek_sinyali_yok",
+      "mesaj": "Kod içinde harici bir sunucuya veri gönderildiğine dair bir işaret bulunamadı."
+    }
+  ]
+}

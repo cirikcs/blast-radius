@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blast Radius</title>
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#1B2124">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@500;600;700&family=Public+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="hero-zemin" aria-hidden="true"></div>
+
+<header class="ust ust-orta">
+  <h1 class="marka">Blast Radius</h1>
+</header>
+
+<main>
+
+  <section id="giris">
+    <p class="tez tez-orta">
+      Bir eklentinin <strong>izinlerini</strong> ve <strong>neye
+      erişebildiğini</strong> gösterir, birden fazla tarayıcının eklenti
+      mağazalarını destekler.
+    </p>
+
+    <div class="kagit giris-kart cam-kart">
+      <label class="alan-etiket" for="kimlik">Mağaza adresi veya eklenti kimliği</label>
+      <div class="alan-satir">
+        <input type="text" id="kimlik" placeholder="chromewebstore.google.com/detail/…" autocomplete="off" spellcheck="false">
+        <button class="dugme dugme-turuncu" id="cek">Denetle</button>
+      </div>
+      <p class="ipucu">Paket mağazadan otomatik indirilir, diske yazılmaz.</p>
+
+      <div class="birak" id="birak">
+        <input type="file" id="dosya" accept=".crx,.zip" hidden>
+        <p class="birak-metin">Dosyanızı buraya sürükleyin</p>
+        <button class="dugme dugme-mavi" id="sec">Dosya seç</button>
+        <p class="ipucu ortala"><code>.crx</code> · <code>.zip</code></p>
+      </div>
+
+      <p class="hata" id="hata" hidden></p>
+    </div>
+  </section>
+
+
+  <section id="yukleniyor" hidden>
+    <div class="kagit bekleme">
+      <div class="ilerleme-cubugu" aria-hidden="true"><span></span></div>
+      <p id="yuklemeMetni">Kod inceleniyor</p>
+      <button class="dugme sade" id="iptal">İptal</button>
+    </div>
+  </section>
+
+  <section id="rapor" hidden>
+
+    <div class="kagit ekstre">
+      <div class="ekstre-ust">
+        <div>
+          <h2 id="eklentiAd">—</h2>
+          <p class="kunye" id="kunye"></p>
+        </div>
+        <button class="dugme sade" id="yeni">Yeni denetim</button>
+      </div>
+
+      <div class="olcut">
+        <div class="olcut-ray" id="olcutRay">
+          <span class="olcut-basamak" data-harf="A">A</span>
+          <span class="olcut-basamak" data-harf="B">B</span>
+          <span class="olcut-basamak" data-harf="C">C</span>
+          <span class="olcut-basamak" data-harf="D">D</span>
+          <span class="olcut-basamak" data-harf="E">E</span>
+        </div>
+        <p class="olcut-etiket" id="olcutEtiket"></p>
+      </div>
+    </div>
+
+    <section class="kagit" id="yetenekBolum">
+      <h3 class="bolum-baslik">Erişebildikleri</h3>
+      <ul class="yetenekler" id="yetenekler"></ul>
+    </section>
+
+    <section class="kagit">
+      <h3 class="bolum-baslik">İzin defteri</h3>
+      <p class="bolum-alt" id="kapsamNot"></p>
+      <div class="defter" id="defter"></div>
+      <div id="iyiBolum">
+        <ul class="iyiler" id="iyiler"></ul>
+      </div>
+    </section>
+
+    <section class="kagit" id="kodBolum">
+      <h3 class="bolum-baslik">Kod bulguları</h3>
+      <div class="bulgular" id="sinyaller"></div>
+      <div id="alanBolum">
+        <p class="bolum-alt aralikli">Kodda geçen adresler</p>
+        <ul class="alanlar" id="alanlar"></ul>
+      </div>
+      <div id="manifestBolum">
+        <ul class="uyarilar" id="uyarilar"></ul>
+      </div>
+    </section>
+
+  </section>
+
+
+</main>
+
+<div class="yukleme-bildirimi" id="yukleme-bildirimi" hidden>
+  <img src="/icons/icon-192.png" alt="" class="yukleme-ikon" width="36" height="36">
+  <div class="yukleme-metin">
+    <strong>Blast Radius'u yükle</strong>
+    <span id="yukleme-aciklama" hidden></span>
+  </div>
+  <button class="yukleme-buton" id="yukleme-buton">Yükle</button>
+  <button class="yukleme-kapat" id="yukleme-kapat" aria-label="Kapat">×</button>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
